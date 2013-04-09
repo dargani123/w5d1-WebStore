@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
 
   def destroy
     cookies[:signed_in_user_id] = ""
+    session[:cart] = {}
     current_user = nil
     redirect_to products_url
   end
