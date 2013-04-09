@@ -1,0 +1,16 @@
+<h1>Products</h1>
+
+<%= form_for :product, url: products_add_to_cart_url do |f| %>
+
+<table border="1">
+  <% @products.each do |product| %>
+  <tr>
+    <td><%= f.label product.id, product.name%></td>
+    <td><%= f.number_field product.id%></td>
+  </tr>
+  <% end %>
+</table>
+
+  <%= f.submit "Add to shopping cart" %>
+<% end %>
+

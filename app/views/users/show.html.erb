@@ -1,0 +1,11 @@
+<h1>User</h1>
+<h2>Email: <%= @user.email %></h2>
+
+<div>In your cart:</div>
+<br>
+<% @session.each do |id, quantity| %>
+<li><%= "#{Product.find(id).name}  ................. #{quantity}"   %></li>
+
+<% end %>
+<br>
+<%= link_to "Go get more products", products_path %>
